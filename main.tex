@@ -1,0 +1,59 @@
+\documentclass[12pt, a4paper]{report}
+
+% for Russian language
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+%for additional symbols
+\usepackage{textcomp}
+
+% for indent first paragraph within section
+\usepackage{indentfirst}
+
+%for text boundaries
+\usepackage[a4paper, left=15mm, right=15mm, top=15mm, bottom=15mm]{geometry}
+
+%for some mathematical things
+\usepackage{amsmath}
+
+%for pictures
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+
+% for links
+\usepackage{hyperref}
+\hypersetup{
+    pdftex ,
+    unicode=true,
+    colorlinks=true,
+    linkcolor=red,
+    citecolor=green,
+    urlcolor=blue,
+    linktocpage=true,
+    pdfhighlight=/N
+}
+
+% for pieces of code
+\usepackage{listings}
+\lstdefinestyle{bash_commands}{
+	showstringspaces=false,
+	language=bash,
+	basicstyle=\normalsize\ttfamily,
+	xleftmargin=\parindent,
+	columns=flexible
+}
+
+
+\begin{document}
+    \input{title}
+    \addtocounter{page}{1}
+    \tableofcontents
+    \input{general_description}
+    \input{usage}
+    \input{software}
+    \input{bibliography}
+    \appendix
+    \addtocontents{toc}{\protect\contentsline{chapter}{Приложения}{}{}}
+    \input{apps_about_ns}
+    \input{app_codeblocks_settings}
+\end{document}
